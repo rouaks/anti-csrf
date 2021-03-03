@@ -1,5 +1,5 @@
 {
-    "name":         "rouaks/anti-csrf",
+    "name":         "paragonie/anti-csrf",
     "description":  "Paragon Initiative's Anti-CSRF Security Library",
     "keywords": [
             "security",
