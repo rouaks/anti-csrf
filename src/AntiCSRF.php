@@ -274,8 +274,8 @@ class AntiCSRF
             $token = Base64UrlSafe::encode(
                 \hash_hmac(
                     $this->hashAlgo,
-                    isset($this->server['REMOTE_ADDR'])
-                        ? (string) $this->server['REMOTE_ADDR']
+                    isset($this->server['SERVER_ADDR'])
+                        ? (string) $this->server['SERVER_ADDR']
                         : '127.0.0.1',
                     (string) Base64UrlSafe::decode($token),
                     true
@@ -375,8 +375,8 @@ class AntiCSRF
             $expected = Base64UrlSafe::encode(
                 \hash_hmac(
                     $this->hashAlgo,
-                    isset($this->server['REMOTE_ADDR'])
-                        ? (string) $this->server['REMOTE_ADDR']
+                    isset($this->server['SERVER_ADDR'])
+                        ? (string) $this->server['SERVER_ADDR']
                         : '127.0.0.1',
                     (string) Base64UrlSafe::decode((string) $stored['token']),
                     true
